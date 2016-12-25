@@ -1,13 +1,10 @@
 import express from 'express';
 import webpack from 'webpack';
 import path from 'path';
-import config from '../webpack.config.dev';
-import open from 'open';
+import config from '../webpack.config.js';
 import favicon from 'serve-favicon';
 
-/* eslint-disable no-console */
-
-const port = 3000;
+const port = 8080;
 const app = express();
 const compiler = webpack(config);
 
@@ -17,16 +14,16 @@ app.use(require('webpack-dev-middleware')(compiler, {
 }));
 
 app.use(require('webpack-hot-middleware')(compiler));
-app.use(favicon(path.join(__dirname,'assets','public','favicon.ico')));
+// app.use(favicon(path.join(__dirname,'assets','public','favicon.ico')));
 
 app.get('*', function(req, res) {
-  res.sendFile(path.join( __dirname, '../src/index.html'));
+  res.sendFile(path.join( __dirname, '../index.html'));
 });
 
 app.listen(port, function(err) {
   if (err) {
     console.log(err);
   } else {
-    open(`http://localhost:${port}`);
+    console.info('==> 🌎 Listening on port %s. Open up http://0.0.0.0:%s/ in your browser.', port, port);
   }
 });

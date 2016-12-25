@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "start": "npm-run-all --parallel open:src",
+    "open:src": "babel-node tools/server.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +17,7 @@
     ]
   },
   "dependencies": {
+    "babel-cli": "^6.18.0",
     "babel-polyfill": "^6.20.0",
     "express": "^4.14.0",
     "immutable": "^3.8.1",
@@ -38,6 +41,9 @@
     "chai-immutable": "^1.6.0",
     "colors": "^1.1.2",
     "mocha": "^3.2.0",
-    "webpack": "^1.14.0"
+    "npm-run-all": "^3.1.2",
+    "webpack": "^1.14.0",
+    "webpack-dev-middleware": "^1.9.0",
+    "webpack-hot-middleware": "^2.14.0"
   }
 }
