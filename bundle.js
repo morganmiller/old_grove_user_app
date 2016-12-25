@@ -112,6 +112,10 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _LandingPage = __webpack_require__(/*! ./home/LandingPage */ 266);
+	
+	var _LandingPage2 = _interopRequireDefault(_LandingPage);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var App = function (_Component) {
@@ -126,9 +130,9 @@
 	    key: 'render',
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'h1',
+	        'div',
 	        null,
-	        'REACTING!'
+	        _react2.default.createElement(_LandingPage2.default, null)
 	      );
 	    }
 	  }]);
@@ -23868,6 +23872,95 @@
 	
 	module.exports = ReactDOMInvalidARIAHook;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./../../process/browser.js */ 91)))
+
+/***/ },
+/* 266 */
+/*!********************************************!*\
+  !*** ./src/components/home/LandingPage.js ***!
+  \********************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _getPrototypeOf = __webpack_require__(/*! babel-runtime/core-js/object/get-prototype-of */ 3);
+	
+	var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
+	
+	var _classCallCheck2 = __webpack_require__(/*! babel-runtime/helpers/classCallCheck */ 29);
+	
+	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
+	
+	var _createClass2 = __webpack_require__(/*! babel-runtime/helpers/createClass */ 30);
+	
+	var _createClass3 = _interopRequireDefault(_createClass2);
+	
+	var _possibleConstructorReturn2 = __webpack_require__(/*! babel-runtime/helpers/possibleConstructorReturn */ 34);
+	
+	var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
+	
+	var _inherits2 = __webpack_require__(/*! babel-runtime/helpers/inherits */ 81);
+	
+	var _inherits3 = _interopRequireDefault(_inherits2);
+	
+	var _react = __webpack_require__(/*! react */ 89);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var LandingPage = function (_Component) {
+	  (0, _inherits3.default)(LandingPage, _Component);
+	
+	  function LandingPage(props) {
+	    (0, _classCallCheck3.default)(this, LandingPage);
+	    return (0, _possibleConstructorReturn3.default)(this, (LandingPage.__proto__ || (0, _getPrototypeOf2.default)(LandingPage)).call(this, props));
+	  }
+	
+	  (0, _createClass3.default)(LandingPage, [{
+	    key: '_onSignUpClick',
+	    value: function _onSignUpClick() {
+	      console.log('clicked sign up');
+	    }
+	  }, {
+	    key: '_onSignInClick',
+	    value: function _onSignInClick() {
+	      console.log('clicked sign in');
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'sign-up' },
+	          _react2.default.createElement(
+	            'button',
+	            { onClick: this._onSignUpClick.bind(this) },
+	            'SIGN UP'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'sign-in' },
+	          _react2.default.createElement(
+	            'button',
+	            { onClick: this._onSignInClick.bind(this) },
+	            'SIGN IN'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	  return LandingPage;
+	}(_react.Component);
+	
+	exports.default = LandingPage;
 
 /***/ }
 /******/ ]);
